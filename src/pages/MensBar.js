@@ -4,7 +4,7 @@ import * as Font from 'expo-font';
 
 import Weights from '../components/weights';
 
-const MensBar = () => {
+const MensBar = ({ navigation }) => {
     return (
         <Container style={{ flex: 2, flexDirection: 'row', justifyContent: 'center' }}>
         <Weights title="95lb" weights="Put on a 25lb Plate"/>
