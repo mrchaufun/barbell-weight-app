@@ -32,9 +32,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Mens Weight" component={MensBar} />
-        <Stack.Screen name="Womens Weight" component={WomensBar} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerStyle: {backgroundColor: '#97908F'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'} }} />
+        <Stack.Screen name="Mens Weight" component={MensBar} options={{ headerStyle: {backgroundColor: '#97908F'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'} }} />
+        <Stack.Screen name="Womens Weight" component={WomensBar} options={{ headerStyle: {backgroundColor: '#97908F'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'} }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
