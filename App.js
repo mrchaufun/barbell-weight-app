@@ -5,16 +5,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Font from 'expo-font';
 
-const HomeScreen = () => {
+import WomensBar from './src/pages/WomensBar';
+import MensBar from './src/pages/MensBar';
+
+const HomeScreen = ({ navigation }) => {
   return (
     <Container>
       <Content>
         <Body>
           <Text style={{ marginTop: 10, fontSize: 20 }}>Which bar are you using?</Text>
-          <Button primary rounded style={{ marginVertical: 120 }}>
+          <Button primary rounded style={{ marginVertical: 120 }} onPress={() => navigation.navigate('Mens Weight')}>
            <Text>Mens Bar</Text>
           </Button>
-          <Button danger rounded>
+          <Button danger rounded onPress={() => navigation.navigate('Womens Weight')}>
             <Text>Womens Bar</Text>
           </Button>
         </Body>
@@ -30,6 +33,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Mens Weight" component={MensBar} />
+        <Stack.Screen name="Womens Weight" component={WomensBar} />
       </Stack.Navigator>
     </NavigationContainer>
   );
