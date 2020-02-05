@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Container, Text, Button, Content, Body } from 'native-base';
-import { Stylesheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Font from 'expo-font';
@@ -31,10 +30,20 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerStyle: {backgroundColor: '#97908F'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'} }} />
-        <Stack.Screen name="Mens Weight" component={MensBar} options={{ headerStyle: {backgroundColor: '#97908F'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'} }} />
-        <Stack.Screen name="Womens Weight" component={WomensBar} options={{ headerStyle: {backgroundColor: '#97908F'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'} }} />
+      <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#97908F'
+          },
+          headerTintColor: '#fff', 
+          headerTitleStyle: {
+            fontWeight: 'bold'
+            }
+      }}
+      >
+        <Stack.Screen name="Home" component={HomeScreen}/>
+        <Stack.Screen name="Mens Weight" component={MensBar}/>
+        <Stack.Screen name="Womens Weight" component={WomensBar}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
