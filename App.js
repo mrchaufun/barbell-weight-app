@@ -1,6 +1,7 @@
 import React from 'react';
-import * as Font from 'expo-font';
+import * as Font  from 'expo-font';
 import { AppLoading } from 'expo';
+import { ActivityIndicator, StatusBar, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider as PaperProvider } from 'react-native-paper';
@@ -14,27 +15,29 @@ import ModalScreen from './src/pages/ModalScreen';
 const Stack = createStackNavigator();
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isReady: true
-    };
+  state = {
+    loading: false
   }
 
   async componentDidMount() {
     await Font.loadAsync({
-      Roboto: require('native-base/Fonts/Roboto.ttf'),
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      'Roboto': require('./assets/fonts/Roboto-Regular.ttf'),
+      'Roboto-Medium': require('assest/fonts/Roboto-Medium.ttf'),
       ...Ionicons.font,
     });
-    this.setState({ isReady: true });
+    this.setState({ loading: true });
   }
 
 
 
 render() {
-  if (!this.state.isReady) {
-    return <AppLoading />;
+  if (!this.state.loading) {
+    return (
+      <View>
+        <ActivityIndicator />
+        <StatusBar barStyle="default" />
+      </View>
+    );
   }
   return (
     <PaperProvider>

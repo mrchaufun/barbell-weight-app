@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Text, Button, Content, Body } from 'native-base';
+import * as Font from 'expo-font';
 
 const HomeScreen = ({ navigation }) => {
     return (
