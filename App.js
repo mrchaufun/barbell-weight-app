@@ -27,8 +27,6 @@ export default class App extends React.Component {
     this.setState({ loading: true });
   }
 
-
-
 render() {
   if (!this.state.loading) {
     return (
