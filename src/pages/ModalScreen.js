@@ -9,7 +9,7 @@ const ModalScreen = () => {
         <Container>
             <Content>
                 <Body>
-                    <Weight title="145lb" weights="Put on a 45lb Plate" />
+                    <Text>This is the Modal Screen</Text>
                 </Body>
             </Content>
         </Container>
