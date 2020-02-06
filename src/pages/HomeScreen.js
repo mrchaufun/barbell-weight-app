@@ -7,7 +7,7 @@ const HomeScreen = ({ navigation }) => {
       <Container>
         <Content>
           <Body>
-            <Text style={{ marginTop: 10, fontSize: 20 }}>Which bar are you using?</Text>
+            <Text style={{ marginTop: 50, fontSize: 20 }}>Which bar are you using?</Text>
             <Button primary rounded style={{ marginVertical: 120 }} onPress={() => navigation.navigate('Mens Weight')}>
              <Text>Mens Bar</Text>
             </Button>
