@@ -36,6 +36,7 @@ render() {
       </View>
     );
   }
+
   return (
     <PaperProvider>
     <NavigationContainer>

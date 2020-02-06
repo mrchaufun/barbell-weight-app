@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Body, Content, Text, Button } from 'native-base';
 import * as Font from 'expo-font';
 
-import Weight from '../components/weights';
+import Weight from '../components/Weights';
 
 const ModalScreen = () => {
     return (

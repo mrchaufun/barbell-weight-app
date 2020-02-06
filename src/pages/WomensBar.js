@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Body, Content, Text, Button } from 'native-base';
 import * as Font from 'expo-font';
 
-import Weights from '../components/weights';
+import Weights from '../components/Weights';
 
 const WomensBar = () => {
     return (
