@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Text, Button, Content, Body } from 'native-base';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { Image } from 'react-native'; 
 import * as Font from 'expo-font';
 
@@ -7,6 +8,7 @@ import Female from '../components/Female';
 
 const HomeScreen = ({ navigation }) => {
     return (
+    <PaperProvider>
       <Container>
         <Content>
           <Body>
@@ -28,6 +30,7 @@ const HomeScreen = ({ navigation }) => {
           </Body>
         </Content>
       </Container>
+      </PaperProvider>
     );
   }
 

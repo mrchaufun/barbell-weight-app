@@ -4,7 +4,6 @@ import { AppLoading } from 'expo';
 import { ActivityIndicator, StatusBar, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Provider as PaperProvider } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
 
 import WomensBar from './src/pages/WomensBar';
@@ -38,7 +37,6 @@ render() {
   }
 
   return (
-    <PaperProvider>
     <NavigationContainer>
       <Stack.Navigator
       screenOptions={{
@@ -58,7 +56,6 @@ render() {
         <Stack.Screen name="Main" component={ModalScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
-    </PaperProvider>
   );
 }
 }
