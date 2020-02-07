@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Weights = ({ title, weights }) => {
+    const [modalOpen, setModalOpen] = useState(false);
+
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => Alert.alert('Add:', `${weights}`, [
-                {text: 'Understood'}
-            ])}>
+
+            <Modal visible={modalOpen} animationType='slide'>
+                <View style={styles.modalStyle}>
+                    <MaterialIcons 
+                        name='close' 
+                        size={28}
+                        onPress={() => setModalOpen(false) }
+                    />
+                    <Text>{weights}</Text>
+                </View>
+            </Modal>
+
+
+            <TouchableOpacity onPress={() => setModalOpen(true) }>
                 <Text style={styles.item}>
                     <Image 
                         style={styles.image}
@@ -38,6 +52,11 @@ const styles = StyleSheet.create({
     image: {
         width: 35,
         height: 35,
+    },
+    modalStyle: {
+        marginTop: 95,
+        height: 25,
+        marginHorizontal: 10
     }
 })
 
