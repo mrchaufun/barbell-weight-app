@@ -15,7 +15,9 @@ const Weights = ({ title, weights }) => {
                         size={28}
                         onPress={() => setModalOpen(false) }
                     />
-                    <Text>{weights}</Text>
+                    <View>
+                        <Text style={styles.modalText}>{weights}</Text>
+                    </View>
                 </View>
             </Modal>
 
@@ -54,9 +56,15 @@ const styles = StyleSheet.create({
         height: 35,
     },
     modalStyle: {
-        marginTop: 95,
-        height: 25,
+        marginTop: 60,
+        height: 100,
         marginHorizontal: 10
+    },
+    modalText: {
+        marginTop: 150,
+        height: 100,
+        fontSize: 34,
+        paddingLeft: 35
     }
 })
 
