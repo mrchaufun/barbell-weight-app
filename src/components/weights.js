@@ -12,7 +12,7 @@ const Weights = ({ title, weights }) => {
                 <View style={styles.modalStyle}>
                     <MaterialIcons 
                         name='close' 
-                        size={28}
+                        size={40}
                         onPress={() => setModalOpen(false) }
                     />
                     <View>
@@ -22,8 +22,8 @@ const Weights = ({ title, weights }) => {
             </Modal>
 
 
-            <TouchableOpacity onPress={() => setModalOpen(true) }>
-                <Text style={styles.item}>
+            <TouchableOpacity style={styles.item} onPress={() => setModalOpen(true) }>
+                <Text style={styles.buttonText}>
                     <Image 
                         style={styles.image}
                         source={{ 
@@ -40,31 +40,37 @@ const Weights = ({ title, weights }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: '#fff',
-        paddingTop: 40,
-        paddingHorizontal: 20
+        marginTop: 20,
+        paddingHorizontal: 30,
+        textAlignVertical: 'center'
     },
     item: {
-        padding: 20,
+        padding: 10,
         backgroundColor: 'grey',
         fontSize: 24,
-        borderRadius: 15,
+        borderRadius: 25,
     },
     image: {
-        width: 35,
-        height: 35,
+        width: 55,
+        height: 55,
+        marginTop: 10
     },
     modalStyle: {
         marginTop: 60,
-        height: 100,
+        height: 150,
         marginHorizontal: 10
     },
     modalText: {
         marginTop: 150,
         height: 100,
         fontSize: 34,
-        paddingLeft: 35
+        paddingLeft: 40
+    },
+    buttonText: {
+        fontSize: 37,
+        paddingLeft: 35,
+        paddingBottom: 10
     }
 })
 
