@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Weights = ({ title, weights }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
-        <View style={styles.container}>
+        <View>
 
             <Modal visible={modalOpen} animationType='slide'>
                 <View style={styles.modalStyle}>
@@ -22,16 +22,14 @@ const Weights = ({ title, weights }) => {
             </Modal>
 
 
-            <TouchableOpacity style={styles.item} onPress={() => setModalOpen(true) }>
-                <Text style={styles.buttonText}>
-                    <Image 
-                        style={styles.image}
-                        source={{ 
-                        uri: "https://images.ctfassets.net/w6rcgw8h8anz/1BALxPCQLJXn443CuvqYPE/661f484a067dbea53a979464e03aa16f/Dumble.png" 
-                    }}
+            <TouchableOpacity onPress={() => setModalOpen(true) }>
+                <View style={styles.item}>
+                    <MaterialCommunityIcons 
+                        name='weight-pound'
+                        size={21}
                     />
-                    {title}
-                </Text>
+                    <Text style={styles.itemText}>{title}</Text>
+                </View>
             </TouchableOpacity>
         </View>
     );
@@ -39,22 +37,15 @@ const Weights = ({ title, weights }) => {
 
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#fff',
-        marginTop: 20,
-        paddingHorizontal: 30,
-        textAlignVertical: 'center'
-    },
     item: {
-        padding: 10,
+        marginTop: 20,
+        marginHorizontal: 30,
+        padding: 16,
         backgroundColor: 'grey',
-        fontSize: 24,
+        borderWidth: 1,
+        borderStyle: 'solid',
         borderRadius: 25,
-    },
-    image: {
-        width: 55,
-        height: 55,
-        marginTop: 10
+        flexDirection: 'row'
     },
     modalStyle: {
         marginTop: 60,
@@ -67,10 +58,9 @@ const styles = StyleSheet.create({
         fontSize: 34,
         paddingLeft: 40
     },
-    buttonText: {
-        fontSize: 37,
-        paddingLeft: 35,
-        paddingBottom: 10
+    itemText: {
+        marginLeft: 10,
+        fontSize: 20,
     }
 })
 

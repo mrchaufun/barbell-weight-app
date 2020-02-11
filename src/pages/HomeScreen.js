@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
       <Container>
         <Content>
           <Body>
-            <Text style={{ marginTop: 50, fontSize: 20 }}>Which bar are you using?</Text>
+            <Text style={{ marginTop: 50, fontSize: 20 }}>Select your Bar!</Text>
             <Button primary rounded style={{ marginVertical: 120 }} onPress={() => navigation.navigate('Mens Weight')}>
             <Image 
                   style={{ width: 30, height: 30, marginLeft: 10 }}
@@ -34,4 +34,4 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
-  export default HomeScreen;
+  export default HomeScreen;  
