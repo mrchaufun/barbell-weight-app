@@ -39,15 +39,6 @@ render() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#97908F'
-          },
-          headerTintColor: '#fff', 
-          headerTitleStyle: {
-            fontWeight: 'bold'
-            }
-      }}
       initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={HomeScreen}/>

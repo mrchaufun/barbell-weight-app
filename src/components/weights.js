@@ -6,7 +6,7 @@ const Weights = ({ title, weights }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
-        <View>
+        <View style={{ backgroundColor: 'white'}}>
 
             <Modal visible={modalOpen} animationType='slide'>
                 <View style={styles.modalStyle}>
