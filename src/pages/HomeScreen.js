@@ -1,29 +1,25 @@
 import React from 'react';
-import { Image, ImageBackground, Button, Text, View, ScrollView, StyleSheet } from 'react-native'; 
+import { Image, TouchableOpacity, Button, Text, View, ScrollView, StyleSheet } from 'react-native'; 
 import * as Font from 'expo-font';
 
 import Header from '../components/Header';
 import SvgComponent from '../components/SvgComponent';
-import Svg from 'react-native-svg';
 
 const HomeScreen = ({ navigation }) => {
     return (
-          <View >
+          <View style={{ backgroundColor: 'white' }}>
             <Header />
-            <ScrollView>
-            <View>
-            <Text style={styles.titleText}>Select your Bar!</Text>
-            <Button onPress={() => navigation.navigate('Mens Weight')} title="Mens Bar"/>
-            <Image 
-                  source={{ uri: 'https://images.ctfassets.net/w6rcgw8h8anz/3zcZtCA1EIQlVCXEs6rbcI/32b33519a98a2f39711f0c7b6650df03/Simple_Solid-6.png' }}
-              />
-
-            <Button onPress={() => navigation.navigate('Womens Weight')} title="Womens Bar" />
-              <Image 
-                  source={{ uri: 'https://images.ctfassets.net/w6rcgw8h8anz/3zcZtCA1EIQlVCXEs6rbcI/32b33519a98a2f39711f0c7b6650df03/Simple_Solid-6.png' }}
-              />
-              </View>
-              </ScrollView>
+              <View>
+                <Text style={styles.titleText}>Select your Bar!</Text>
+                <SvgComponent>
+                  <TouchableOpacity style={styles.mensStyle} onPress={() => navigation.navigate('Mens Weight')} >
+                    <Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold' }}>Mens Bar</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.womensStyle} onPress={() => navigation.navigate('Womens Weight')} >
+                    <Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold' }}>Womens Bar</Text>
+                  </TouchableOpacity>
+                  </SvgComponent>
+                </View>
             </View>
     );
   }
@@ -31,10 +27,35 @@ const HomeScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
       titleText: {
         textAlign: 'center',
-        marginTop: 30,
+        marginTop: 60,
         fontSize: 34,
         fontWeight: 'bold'
-      }
+      },
+      mensStyle: {
+        flex: 1,
+        alignSelf: 'center',
+        backgroundColor: 'blue',
+        borderRadius: 30,
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 15,
+        paddingHorizontal: 60,
+        position: 'absolute',
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      womensStyle: {
+        flex: 1,
+        alignSelf: 'center',
+        backgroundColor: 'red',
+        borderRadius: 30,
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 15,
+        paddingHorizontal: 60,
+        margin: 40,
+      },
   })
 
-  export default HomeScreen;  
+
+  export default HomeScreen;

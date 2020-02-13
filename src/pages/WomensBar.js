@@ -7,14 +7,14 @@ import Header from '../components/Header';
 
 const WomensBar = () => {
     return (
-        <View style={{ height: '100%' }}>
+            <ScrollView style={{ backgroundColor: 'white' }} contentContainerStyle={{ flexGrow: 1, }}>
+        <View>
             <Header />
-            <ScrollView contentContainerStyle={{ flexGrow: 1, }}>
             <Weights style={styles.item} title="95lb" weights="Put on a 25lb Plate"/>
             <Weights title="115lb" weights="Put on a 35lb Plate"/>
             <Weights title="135lb" weights="Put on a 45lb Plate"/>
-            </ScrollView>
         </View>
+            </ScrollView>
     );
 }
 
