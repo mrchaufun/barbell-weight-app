@@ -42,7 +42,12 @@ const HomeScreen = ({ navigation }) => {
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 440
+        marginTop: 440,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.32,
+        shadowRadius: 5,  
+        elevation: 9,
       },
       womensStyle: {
         flex: 1,
@@ -54,7 +59,12 @@ const HomeScreen = ({ navigation }) => {
         padding: 15,
         paddingHorizontal: 60,
         marginTop: 540,
-        position: 'absolute'
+        position: 'absolute',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.32,
+        shadowRadius: 5,  
+        elevation: 9,
       },
   })
 

@@ -1,25 +1,34 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Alert, Modal, Dimensions, SafeAreaView } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import ConfettiCannon from 'react-native-confetti-cannon';
+
+
+const window = Dimensions.get('window');
+const screenHeight = window.height;
+const screenWidth = window.width;
 
 const Weights = ({ title, weights, passedStyle }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
-        <View style={{ backgroundColor: 'white'}}>
+            <SafeAreaView style={{ flex: 1 }}>
+                <View style={{ backgroundColor: 'white'}}>
 
-            <Modal visible={modalOpen} animationType='slide'>
-                <View style={styles.modalStyle}>
+                    <Modal visible={modalOpen} animationType='slide' presentationStyle='formSheet'>
+                        <View style={styles.modalStyle}>
+                    <TouchableOpacity style={{ marginTop: 60, marginLeft: 10 }} onPress={() => setModalOpen(false)}>
                     <MaterialIcons 
                         name='close' 
                         size={40}
-                        onPress={() => setModalOpen(false) }
                     />
-                    <View>
-                        <Text style={styles.modalText}>{weights}</Text>
+                    </TouchableOpacity>
+                     <View>
+                     <ConfettiCannon count={100} origin={{x: screenWidth + 200, y: screenHeight + 130}} />
+                         <Text style={styles.modalText}>{weights}</Text>
+                     </View>
                     </View>
-                </View>
-            </Modal>
+                    </Modal>
 
 
             <TouchableOpacity style={[styles.item, passedStyle]} onPress={() => setModalOpen(true) }>
@@ -32,7 +41,8 @@ const Weights = ({ title, weights, passedStyle }) => {
                         <Text style={styles.itemText}>{title}</Text>
                     </View>
             </TouchableOpacity>
-        </View>
+            </View>
+        </SafeAreaView>
     );
 }
 
@@ -53,18 +63,19 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.32,
         shadowRadius: 5,  
-        elevation: 9
+        elevation: 9,
+        marginTop: 25
     },
     modalStyle: {
-        marginTop: 60,
-        height: 150,
-        marginHorizontal: 10
+        height: screenHeight,
     },
     modalText: {
-        marginTop: 150,
-        height: 100,
+        marginTop: 250,
+        marginHorizontal: 20,
+        height: '100%',
         fontSize: 34,
-        paddingLeft: 40
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     itemText: {
         fontSize: 20,

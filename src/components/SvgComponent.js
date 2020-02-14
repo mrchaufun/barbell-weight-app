@@ -6,7 +6,7 @@ function SvgComponent(props) {
     <Svg
       className="prefix__illustration"
       width={1155}
-      height={800}
+      height={900}
       viewBox="0 0 1155 700"
       fill="none"
       {...props}
