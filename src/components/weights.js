@@ -15,7 +15,7 @@ const Weights = ({ title, weights, passedStyle }) => {
             <SafeAreaView style={{ flex: 1 }}>
                 <View style={{ backgroundColor: 'white'}}>
 
-                    <Modal visible={modalOpen} animationType='slide' presentationStyle='formSheet'>
+                    <Modal visible={modalOpen} animationType='fade' presentationStyle='formSheet'>
                         <View style={styles.modalStyle}>
                     <TouchableOpacity style={{ marginTop: 60, marginLeft: 10 }} onPress={() => setModalOpen(false)}>
                     <MaterialIcons 
@@ -24,7 +24,7 @@ const Weights = ({ title, weights, passedStyle }) => {
                     />
                     </TouchableOpacity>
                      <View>
-                     <ConfettiCannon count={100} origin={{x: screenWidth + 200, y: screenHeight + 130}} />
+                     <ConfettiCannon count={50} origin={{x: -20, y: 10}} />
                          <Text style={styles.modalText}>{weights}</Text>
                      </View>
                     </View>

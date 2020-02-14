@@ -24,6 +24,8 @@ const MensBar = () => {
                     <Weights passedStyle={{ backgroundColor: '#5079ff' }} title="250lb" weights="Put on 2x 45lb, 10lb and 5lb Plates on both sides"/>
                     <Weights passedStyle={{ backgroundColor: '#5079ff' }} title="285lb" weights="Put on 2x 45lb, 25lb and 5lb Plates on both sides"/>
                     <Weights passedStyle={{ backgroundColor: '#5079ff' }} title="315lb" weights="Put on 3x 45lb Plates on both sides"/>
+                    <Weights passedStyle={{ backgroundColor: '#5079ff' }} title="325lb" weights="Put on 3x 45lb and a 5lb Plate on both sides"/>
+                    <Weights passedStyle={{ backgroundColor: '#5079ff' }} title="355lb" weights="Put on 3x 45lb and 2x 10lb Plates on both sides"/>
                 </View>
             </SafeAreaView>
         </ScrollView>
