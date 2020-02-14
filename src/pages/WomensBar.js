@@ -10,9 +10,9 @@ const WomensBar = () => {
             <ScrollView style={{ backgroundColor: 'white' }} contentContainerStyle={{ flexGrow: 1, }}>
         <View>
             <Header />
-            <Weights style={styles.item} title="95lb" weights="Put on a 25lb Plate"/>
-            <Weights title="115lb" weights="Put on a 35lb Plate"/>
-            <Weights title="135lb" weights="Put on a 45lb Plate"/>
+            <Weights passedStyle={{ backgroundColor: '#F08080' }} title="95lb" weights="Put on a 25lb Plate"/>
+            <Weights passedStyle={{ backgroundColor: '#F08080' }} title="115lb" weights="Put on a 35lb Plate"/>
+            <Weights passedStyle={{ backgroundColor: '#F08080' }} title="135lb" weights="Put on a 45lb Plate"/>
         </View>
             </ScrollView>
     );
@@ -20,8 +20,7 @@ const WomensBar = () => {
 
 const styles = StyleSheet.create({
     item: {
-        padding: 10,
-        borderRadius: 5
+        backgroundColor: '#F08080'
     }
 })
 

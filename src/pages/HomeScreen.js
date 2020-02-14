@@ -11,15 +11,14 @@ const HomeScreen = ({ navigation }) => {
             <Header />
               <View>
                 <Text style={styles.titleText}>Select your Bar!</Text>
-                <SvgComponent>
+                <SvgComponent/>
+                </View>
                   <TouchableOpacity style={styles.mensStyle} onPress={() => navigation.navigate('Mens Weight')} >
                     <Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold' }}>Mens Bar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.womensStyle} onPress={() => navigation.navigate('Womens Weight')} >
                     <Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold' }}>Womens Bar</Text>
                   </TouchableOpacity>
-                  </SvgComponent>
-                </View>
             </View>
     );
   }
@@ -34,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
       mensStyle: {
         flex: 1,
         alignSelf: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: '#5079ff',
         borderRadius: 30,
         borderWidth: 1,
         borderColor: 'black',
@@ -42,18 +41,20 @@ const HomeScreen = ({ navigation }) => {
         paddingHorizontal: 60,
         position: 'absolute',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 440
       },
       womensStyle: {
         flex: 1,
         alignSelf: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#F08080',
         borderRadius: 30,
         borderWidth: 1,
         borderColor: 'black',
         padding: 15,
         paddingHorizontal: 60,
-        margin: 40,
+        marginTop: 540,
+        position: 'absolute'
       },
   })
 
