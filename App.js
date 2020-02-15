@@ -9,7 +9,6 @@ import { Ionicons } from '@expo/vector-icons';
 import WomensBar from './src/pages/WomensBar';
 import MensBar from './src/pages/MensBar';
 import HomeScreen from './src/pages/HomeScreen';
-import ModalScreen from './src/pages/ModalScreen';
 
 const Stack = createStackNavigator();
 
@@ -44,7 +43,6 @@ render() {
         <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="Mens Weight" component={MensBar}/>
         <Stack.Screen name="Womens Weight" component={WomensBar}/>
-        <Stack.Screen name="Main" component={ModalScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
